@@ -15,6 +15,7 @@ import (
 	database "github.com/antonVNF/daily-entries/internal/repository"
 	"github.com/antonVNF/daily-entries/internal/server"
 	"github.com/antonVNF/daily-entries/internal/user"
+	"github.com/joho/godotenv"
 )
 
 func main() {
@@ -25,6 +26,9 @@ func main() {
 }
 
 func run() error {
+	if os.Getenv("APP_ENV") != "production" {
+		_ = godotenv.Load()
+	}
 	cfg, err := config.Load()
 	if err != nil {
 		return fmt.Errorf("load config: %w", err)
