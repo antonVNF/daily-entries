@@ -19,7 +19,7 @@ func ToResponse(u user.User) UserResponse {
 		ID:        u.ID,
 		Email:     u.Email,
 		Name:      u.Name,
-		CreatedAt: u.CreatedAt.Format(time.RFC3339),
-		UpdatedAt: u.UpdatedAt.Format(time.RFC3339),
+		CreatedAt: u.CreatedAt.UTC().Format(time.RFC3339),
+		UpdatedAt: u.UpdatedAt.UTC().Format(time.RFC3339),
 	}
 }
