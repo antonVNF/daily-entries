@@ -1,4 +1,4 @@
-module awesomeProject3
+module github.com/antonVNF/daily-entries
 
 go 1.26.4
 

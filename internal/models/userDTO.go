@@ -1,11 +1,12 @@
 package models
 
 import (
-	"awesomeProject3/internal/user"
 	"time"
+
+	"github.com/antonVNF/daily-entries/internal/user"
 )
 
-type userResponse struct {
+type UserResponse struct {
 	ID        int64  `json:"id"`
 	Email     string `json:"email"`
 	Name      string `json:"name"`
@@ -13,8 +14,8 @@ type userResponse struct {
 	UpdatedAt string `json:"updated_at"`
 }
 
-func toResponse(u user.User) userResponse {
-	return userResponse{
+func ToResponse(u user.User) UserResponse {
+	return UserResponse{
 		ID:        u.ID,
 		Email:     u.Email,
 		Name:      u.Name,
